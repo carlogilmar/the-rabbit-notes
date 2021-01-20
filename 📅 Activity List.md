@@ -38,6 +38,12 @@ ok Hacer factura con Ewa, faltan datos de billing y preguntar si vienen de EU
 - Cita SAT 
 ok Cita dermatologa Sábado 10 AM
 
+Lunes 12pm - 2 am
+Martes 9 am
+Miercoles
+Jueves
+Viernes
+
 
 
 
