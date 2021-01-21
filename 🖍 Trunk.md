@@ -12,3 +12,7 @@ Complementarios
 
 - Estabilidad de un dev
 - Resistencias mentales
+
+Side Projects
+
+- Meter Blog en Visual Partnership

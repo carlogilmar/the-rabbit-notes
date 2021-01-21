@@ -30,7 +30,6 @@ Start Mnesia mnesia:start()
 2. Erlang system started
 3. Nodes defined and implemented (NodeList)
 
-
 Example Mnesia
 
 1. Start Mnesia with the location of the database directory 
@@ -49,7 +48,6 @@ Meeting with Francesco and Ali
 - Trigger mnesia backups
 - See how to backup 
 - Visuailzation of the wombat
-
 
 Wombat
 - Install by package or docker image
@@ -185,6 +183,13 @@ mnesia:stop().
 mnesia:start().
 ```
 
+### Mnesia Commands
+
+```
+set_debug_level(debug)
+```
+
+
 # Wombat OAM
 
 ## Getting Started Guide
@@ -265,11 +270,117 @@ Shell = self().
 
 Alarm: process_limit_major && process_message_queue_major
 
-Learning more
+## Learning more
+
 To find out more about memory and system limits, see the following official Erlang documentation: http://www.erlang.org/doc/efficiency_guide/advanced.html
 
-5. 
+## Log Entries
+
+In the node you are running, enter the following:
+
+> error_logger:error_msg("My error").
+
+You will see the error_logger notification in the list of notifications for your node.
+
+Go to Live Metrics, select Process notifications, and then select the Busy port, Large heap and Long schedule notifications.
 
 
 
 
+# Blog Post: DevOps from the Trenches
+
+- Save your time
+- Incidents in software, taking your time finding bugs instead of solve problems
+- how to formalize that experiences in reusable code
+- Our aim: don't spend 40 hours finding trivial errors
+- Not reinvent the whell 
+- Borns Wombat, an standalone Erlang node as a generic operations and maintenance node (OAM) for erlang clusters
+- Any system with requirements on high availability should follow a similar pattern and approach. 
+- Much of what we do here at Erlang Solutions, is developing, supporting and maintaining systems. Every incident we ever experienced which could have been avoided by analyzing symptoms and taking action has been formalized. 
+- So not only are we alerted that nodes running the same release have different versions of a module, we also have the audit trail which lead to that state for post mortem debugging purposes.
+- Every system that never stops needs mechanisms for collecting and suppressing alarms, monitoring logs and generating and analyzing metrics.
+- It is one or more subsystem that collects functionality used for monitoring, pre-emptive support, support automation and post-mortem debugging.
+- This is the operations and maintenance node approach we believe should be adopted by other verticals, as high availability is today relevant to most server side systems
+- see how a proper O&M system would have reduced downtime and saved $$ in the form of person months of troubleshooting efforts and reduced hardware requirements.
+## Alarms
+- A threshold based alarm is when you gather a metric (such as memory consumption or requests per second) and raise an alarm if the node on which it is gathered on reaches a certain upper or lower bound
+- The concept is easy; if something that should not be happening is happening, an alarm is raised.
+- Processes with long message queues are usually a warning of issues about to happen. They are easy to monitor, but are you doing it?
+- Had we had notifications on nodes crashing, we would have picked the problem up after the event, and had we been monitoring memory usage, we would have seen the cause, leading us to look at the message queue metrics.
+- Today, WombatOAM monitors the actual memory utilisation of the shell process and raises an alarm should it become unproportionately large.
+- Every alarm we implemented in WombatOAM has a story behind it.
+- Oh, and if you are using Nagios, Pagerduty, or other alarming and notification services, WombatOAM allows you to push alarms.
+## Metrics 
+- Metrics are there to create visibility, help troubleshoot issues, prevent failure and for post mortem debugging
+- You should see the used and allocated process memory increase, which leads you to the sum of all message queues. These metrics allow you to implement threshold-based alarms, alerting the DevOps team the node has utilized 75% and 90% of its memory. It also allows you to figure out where the memory went after the node crashed and was restarted.
+- Wombat today increments counters for processes spending too long garbage collecting, processes with unusually high memory spikes, or NIFs or BIFs hogging the scheduler, blocking other processes from executing and affecting the soft real-time properties of the system. If you suspect there is an issue, you can enable notifications and log the calls causing the issues themselves.
+- And let Wombat gather over a hundred VM specific metrics, with a hundred more depending on which applications you are running in your stack.
+## Notifications
+- Notifications are log entries recording a state change.
+- They help with troubleshooting and post mortem debugging. 
+- They are all in one place in wombat, so you can browse and search all node restarts and crash reports
+- if you are using logging applications such as the SASL Logger, Lager and the Elixir Logger, you can pull in your business logs and use them
+- WombatOAM can push them to LogStash, Splunk, DataDog, Graylog, Zabbix or any other log aggregation service you might be using.
+- After all, as they said, it is just erlang code. 
+- Honestly? If you want to reinvent the wheel, don’t bother. Just get WombatOAM or come work for us instead!
+## Wrapping Up
+- Our original focus was operations and DevOps teams, but developers and testers have since used WombatOAM for visibility and quick turnaround of bugs.
+- Similar issues, when they did not have the same level of visibility, could have taken days to resolve.
+## Conclusion
+- It has long been known that using Erlang, you achieve reliability and availability
+- The hard work starts when designing your system.
+- Monitoring, pre-emptive support, support automation and post mortem debugging are not things you can with easily just bolt on later.
+    - By monitoring, we mean having full visibility into what is going on. 
+    - With pre-emptive support, we mean the ability to react to this visibility and prevent failure. 
+    - Support automation allows you to react to external events, reducing service disruption resolving problems before they escalate. 
+    - Post-mortem debugging is all about quickly and efficiently being able detect what caused the failure without having to stare at a screen hoping the anomaly or crash experienced in the middle of the night happens again whilst you are watching
+- Erlang takes care of a lot of accidental difficulties allowing you to achieve high levels of availability at a fraction of the effort compared to other programming languages. WombatOAM will take care of the rest.
+
+### Meeting with Francesco and Ali
+
+- How Wombat reacts in the Mnesia Partition
+- Wombat Agent
+- Add elixir examples
+- Netslip in circle ci
+- Trigger mnesia backups
+- See how to backup 
+- Visuailzation of the wombat
+
+TO DO
+
+- Get exposure to Erlang getting Mnesia up and running on docker, and simulate a network partition. 
+- Upgrade training material. (including QLC). 
+- Add sections to training material on how to use Mnesia with Docker & K8, disaster recovery from backup, and examples on tracing levels. 
+- Expan operations module. 
+- With Francesco, draw diagram on using dirty reads with the risk of inconsistent data as a result. 
+- Show how to serialise operations in a process. 
+
+- Explore the Wombat Mnesia plugin, and make sure we have all the metrics. 
+- See if we can trigger backups, reload them. 
+- Review trace data. Improve. 
+- Assess the metrics already present for mnesia in Wombat.
+- Advise on additional ones that can be included.
+- Test the “Recover from partitioned mnesia tool” and advise on usability.
+- Advise on additional OAM features that we could add to Wombat.
+- Advise on Visualisation/UX improvements in Wombat.
+
+Flows for slides
+
+1. Mnesia Network partition using docker
+    + Create docker network
+    + Connect two nodes with mnesia 
+2. Add a new node in Wombat
+    + Topology
+    + Metrics
+    + Logs
+    + Alarms
+    + Tools
+3. Explore a mnesia node in wombat: agent and table visualizer
+4. Wombat and Mnesia
+    + Node Down alarm
+    + Network nodes: add second node
+    + Add Mnesia table and records and make dirty reads
+    + Disconnect one node and get a inconsistent_database alarm
+    + Recover from partitioned mnesia
+
+Advicing Wombat
