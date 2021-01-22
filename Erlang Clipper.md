@@ -284,57 +284,33 @@ You will see the error_logger notification in the list of notifications for your
 
 Go to Live Metrics, select Process notifications, and then select the Busy port, Large heap and Long schedule notifications.
 
+## Mnesia from Learning Erlang Programming
 
+- Packages as an OTP application
+- To use:
+    + Create an schema (you can use as a ram only db)
+    + Start Mnesia
+    + Create tables
+    + Manipulate your data
+- Schema: 
+    + Collection of table definitions that describe your database
+    + Covers which tables are stored on ram or disk, differ from node to node
 
+- Distributed Mnesia
+    + Create schema when then nodes are connected `mnesia:create_schema([node()|nodes()]).`
+    + If you aren't using a distributed enviroment only pass `[node()]` as arg
+    + will propagate to the other nodes automatically
+    + Each node will create a directory `erl -mnesia dir Dir`
 
-# Blog Post: DevOps from the Trenches
+- Starting Mnesia
+    + `application:start(mnesia).` or `mnesia:start().`
+    + If you start Mnesia without a schema, a memory-only database will be created.
+    + Stop `application:stop(mnesia)` or `mnesia:stop()`
 
-- Save your time
-- Incidents in software, taking your time finding bugs instead of solve problems
-- how to formalize that experiences in reusable code
-- Our aim: don't spend 40 hours finding trivial errors
-- Not reinvent the whell 
-- Borns Wombat, an standalone Erlang node as a generic operations and maintenance node (OAM) for erlang clusters
-- Any system with requirements on high availability should follow a similar pattern and approach. 
-- Much of what we do here at Erlang Solutions, is developing, supporting and maintaining systems. Every incident we ever experienced which could have been avoided by analyzing symptoms and taking action has been formalized. 
-- So not only are we alerted that nodes running the same release have different versions of a module, we also have the audit trail which lead to that state for post mortem debugging purposes.
-- Every system that never stops needs mechanisms for collecting and suppressing alarms, monitoring logs and generating and analyzing metrics.
-- It is one or more subsystem that collects functionality used for monitoring, pre-emptive support, support automation and post-mortem debugging.
-- This is the operations and maintenance node approach we believe should be adopted by other verticals, as high availability is today relevant to most server side systems
-- see how a proper O&M system would have reduced downtime and saved $$ in the form of person months of troubleshooting efforts and reduced hardware requirements.
-## Alarms
-- A threshold based alarm is when you gather a metric (such as memory consumption or requests per second) and raise an alarm if the node on which it is gathered on reaches a certain upper or lower bound
-- The concept is easy; if something that should not be happening is happening, an alarm is raised.
-- Processes with long message queues are usually a warning of issues about to happen. They are easy to monitor, but are you doing it?
-- Had we had notifications on nodes crashing, we would have picked the problem up after the event, and had we been monitoring memory usage, we would have seen the cause, leading us to look at the message queue metrics.
-- Today, WombatOAM monitors the actual memory utilisation of the shell process and raises an alarm should it become unproportionately large.
-- Every alarm we implemented in WombatOAM has a story behind it.
-- Oh, and if you are using Nagios, Pagerduty, or other alarming and notification services, WombatOAM allows you to push alarms.
-## Metrics 
-- Metrics are there to create visibility, help troubleshoot issues, prevent failure and for post mortem debugging
-- You should see the used and allocated process memory increase, which leads you to the sum of all message queues. These metrics allow you to implement threshold-based alarms, alerting the DevOps team the node has utilized 75% and 90% of its memory. It also allows you to figure out where the memory went after the node crashed and was restarted.
-- Wombat today increments counters for processes spending too long garbage collecting, processes with unusually high memory spikes, or NIFs or BIFs hogging the scheduler, blocking other processes from executing and affecting the soft real-time properties of the system. If you suspect there is an issue, you can enable notifications and log the calls causing the issues themselves.
-- And let Wombat gather over a hundred VM specific metrics, with a hundred more depending on which applications you are running in your stack.
-## Notifications
-- Notifications are log entries recording a state change.
-- They help with troubleshooting and post mortem debugging. 
-- They are all in one place in wombat, so you can browse and search all node restarts and crash reports
-- if you are using logging applications such as the SASL Logger, Lager and the Elixir Logger, you can pull in your business logs and use them
-- WombatOAM can push them to LogStash, Splunk, DataDog, Graylog, Zabbix or any other log aggregation service you might be using.
-- After all, as they said, it is just erlang code. 
-- Honestly? If you want to reinvent the wheel, don’t bother. Just get WombatOAM or come work for us instead!
-## Wrapping Up
-- Our original focus was operations and DevOps teams, but developers and testers have since used WombatOAM for visibility and quick turnaround of bugs.
-- Similar issues, when they did not have the same level of visibility, could have taken days to resolve.
-## Conclusion
-- It has long been known that using Erlang, you achieve reliability and availability
-- The hard work starts when designing your system.
-- Monitoring, pre-emptive support, support automation and post mortem debugging are not things you can with easily just bolt on later.
-    - By monitoring, we mean having full visibility into what is going on. 
-    - With pre-emptive support, we mean the ability to react to this visibility and prevent failure. 
-    - Support automation allows you to react to external events, reducing service disruption resolving problems before they escalate. 
-    - Post-mortem debugging is all about quickly and efficiently being able detect what caused the failure without having to stare at a screen hoping the anomaly or crash experienced in the middle of the night happens again whilst you are watching
-- Erlang takes care of a lot of accidental difficulties allowing you to achieve high levels of availability at a fraction of the effort compared to other programming languages. WombatOAM will take care of the rest.
+- Mnesia Tables
+    + Contains Erlang records
+    + `mnesia:create_table(Name, Options)`
+    + Each instance of a record in a Mnesia table is called an object.
 
 ### Meeting with Francesco and Ali
 
@@ -383,4 +359,257 @@ Flows for slides
     + Disconnect one node and get a inconsistent_database alarm
     + Recover from partitioned mnesia
 
+The following Items and Values are most commonly used:
+- {disc_copies, Nodelist} Provides the list of nodes where you want disc and RAM replicas of the table.
+- {disc_only_copies, Nodelist} Nodelist contains the nodes where you want disc-only copies of this particular table. This is usually a backup node, as local reads will be slow on these nodes.
+- {ram_copies, Nodelist} Specifies which nodes you want to have duplicate RAM copies of this particular table. The default value of this attribute is [node()], so omitting it will create a local Mnesia RAM copy.
+- {type, Type} States whether the table is a set, ordered_set, or bag. The default value is set.
+- {attributes, AtomList} Is a list of atoms denoting the record field names. They are mainly used when indexing or using query list comprehensions. Please, do not hardcode them; generate them using the function call record_info(fields, RecordName).
+- {index, List} Is a list of attributes (record field names) which can be used as secondary keys when accessing elements in the table.
+
+```
+2> Fields = [msisdn,id,status,plan,services].
+[msisdn,id,status,plan,services]
+
+mnesia:create_table(usr, [{disc_copies, [node()]},
+{ram_copies, nodes()}, {type, set}, {attributes, Fields}, {index, [id]}]).
+```
+
+- When starting the Mnesia application, all tables configured in the schema are created or opened. This is a relatively fast, nonblocking operation, done in parallel with the startup of other applications.
+- For large persistent tables, or tables that were incorrectly closed and whose backup files need repair, other applications might try to access the table, for avoid this `mnesia:wait_for_tables(TableList, TimeOut)` where TableList is the table names and timeOut is the atom `infinity`
+
+```
+-module(usr).
+-export([create_tables/0, ensure_loaded/0]).
+-export([add_usr/3, delete_usr/1, set_service/3, set_status/2,
+delete_disabled/0, lookup_id/1]).
+-export([lookup_msisdn/1, service_flag/2]).
+-include("usr.hrl").
+
+%% Mnesia API
+create_tables() ->
+    mnesia:create_table(usr, 
+                        [
+                            {disc_copies, [node()]}, 
+                            {ram_copies, nodes()},
+                            {type, set}, 
+                            {attributes,record_info(fields, usr)},
+                            {index, [id]}
+                        ]).
+ensure_loaded() ->
+    ok = mnesia:wait_for_tables([usr], 60000).
+```
+
+## Transactions
+
+- As many concurrent processes, possibly located on different nodes, can access and manipulate objects at the same time, you need to protect the data from race conditions.
+- A transaction: 
+    + guarantees that the database will be taken from one consistent state
+to another
+    + changes are persistent and atomic across all nodes
+    + transactions running in parallel will not interfere with each other
+- Encapsulate the operations in   a fun and executing them in a transacion `mnesia:transaction(Fun)`, the fun contains operations such as read, write, and delete.
+- When executing your fun in a transaction, Mnesia will put locks on the objects it has to manipulate. If another process is holding a conflicting lock on an object, the transaction will first release all of its current locks and then restart.
+
+## Writting 
+
+1. use the function mnesia:write(Record)
+2. encapsulating it in a fun
+3. executing it in a transaction
+
+Mnesia will put a write lock on all of the copies of this object (including those on remote nodes).
+
+## Reading and deleting
+
+- To read objects, you use the function mnesia:read(OId), where OId is an object identifier of the format {TableName, Key}.
+- You need to execute the function within the scope of a transaction; failing to do so will cause a runtime error.
+- Note from which node we are now reading the record. It does not make a difference.
+
+```
+(switch@Vaio)5> mnesia:read({usr, 700000003}).
+** exception exit: {aborted,no_transaction}
+in function mnesia:abort/1
+```
+
+## Indexing
+
+- When creating the usr table, one of the options we passed into the call was the tuple `{index, AttributeList}`
+- allowing us to look up and manipulate objects using any of the secondary fields (or keys) listed in the AttributeList
+- For use it `index_read(TableName, SecondaryKey, Attribute).`
+
+## Dirty Operations
+
+- Execute an operation outside the scope of a transaction without setting any locks.
+- dirty operations are about 10 times faster than their counterparts that are executed in transactions
+- dirty operations will significantly enhance the performance of your program
+
+```
+dirty_read(Oid)
+dirty_write(Object)
+dirty_delete(ObjectId)
+dirty_index_read(Table, SecondaryKey, Attribute)
+```
+
+- transactions quickly become a major bottleneck in some cases
+- A common way to use dirty operations while ensuring data consistency is to serialize all destructive operations in a single process.
+- If you need to use dirty operations in a distributed environment, the trick is to ensure that updates to a certain key subset are serialized through a process on a single node.
+
+## Inconsistent Tables
+
+- Using dirty write on two nodes
+- Add a record in two nodes when they're disconnected
+- Reconnect both nodes through TCP/IP connection
+- Both entries gets buffered on both nodes
+- This will generate race condition and overwriting the entry in the peer node
+- With transactions this would not have occurred
+
+## Partitioned Networks
+
+- One biggest problem in a distributed environment is the partitioned network
+
+Asumme: 
+    1. Two erlang nodes with mnesia table
+    2. Network glitch occurs
+    3. Both copies of the table are updated independtly 
+    4. The network comes back
+    5. You have an inconsistent shared table
+    6. Mnesia will know the tables are partitioned and will report
+    7. What do you?
+
+### Set master nodes
+
+> mnesia:set_master_nodes(Table, Nodes).
+
+- Mnesia will take the content of the master node and will duplicated in the partitioned nodes
+- As soon as you increase the number of replicas in tghe nodes you will have more risk of partitioned network
+- It's important have a recovery plan from partitioned databases 
+
+## Monitoring and Preemptive Support
+
+- your secret sauce to high availability is achieving a high level of
+visibility into what is going on in your system and the ability to act on the information you collect
+- will use all this information for two purposes: preemptive support
+and postmortem debugging.
+- Monitoring the system will allow them to pick up
+early warning signs and address problems before they get out of control
+- If you do not have snapshots of the system, debugging will be not be methodical and you will have to rely on guesswork
+- Ensuring you have the visibility and historical data will be time well spent prior to launch
+
+## Monitoring
+
+- Without proper visibility in place, you can only guess the current state of
+your system and are unable to spot trends and address issues before they escalate
+- What thing cause the crash?
+- systems need to be monitored, and information
+stored for later access.
+
+Usages:
+    - Logs: record state changes in your program
+    - Metrics: Polling a value at a particular point in time
+    - Alarms: Event associated with a state
+
+### Monitoring + Configuration + Management = Operation, Administration and Maintennance OAM
+
+- All systems should let you inspect, manage, and do basic troubleshooting
+- This OAM functionality have his own node
+- OAM nodes can be used to handle both Erlang and non-Erlang components of your
+software.
+- monitor and manage your network, switches, load balancers, firewalls, hardware, OS, and stack
+
+### Logs
+
+- A log is an entry in a file or database that records an event that can be used as part of an audit trail
+- variety of purposes, including tracing, debugging, auditing, compliance monitoring, and billing.
+- have logs that allow those using them to uniquely follow the flow of
+requests across nodes in order to locate issues or gather required data
+- SASL logs for OTP
+- If you want high availability, you need to automate the discovery of the SASL crash and error reports, and then ensure any faults get addressed.
+- Think about what will give the maintainers, support engineers, DevOps
+team, accountants, auditors, marketing, and customer service representatives a good overview of what is happening or has happened. Every time a notable change in state occurs, log useful information that was not previously stored
+- Replaying the state transitions in the FSM would allow DevOps engineers to
+retrace the steps taken by users adding items to their shopping baskets and paying for them.
+- As a minimum requirement, always log the incoming and outgoing requests and results where appropriate so you are later able to identify the problematic system or component.
+- Always log all Erlang shell commands and interactions
+- Other items to log could include network connectivity and memory issues, which are notifications arising from the system_monitor
+- “a database is a cache of your event logs,” if your database (or state) gets corrupted, the logs should tell you why
+
+## Metrics
+
+-  Metrics are sets of numeric data collected at regular intervals and organized in chronological order.
+-  You need to retrieve data on the OS and network layers, on the middleware layer
+- Improve the performance and reliability of the system and troubleshoot issues after they have occurred
+- monitor the system to detect abnormal behavior and prevent failures
+- predict trends and usage spikes, using the results to optimize hardware costs
+- study long-term user trends and user experience
+- make sure the system load doesn’t exceed available resources, requesting metrics on the memory usage of the Erlang VM.
+- One typical value is an amount, a discrete or continuous value with incremental and decremental capabilities. 
+- A common form of amount is counters, as we have seen.
+- Gauges are a form of counter that provide a value at a particular point in time.
+
+Measures:
+    - Memory
+    - Time (latency) for generate histograms
+
+1. Amount
+    - Counters
+2. Gauges 
+    - Memory management  
+    - Histograms
+3. Meters
+    - Spiral
+    
+### Alarms
+
+- Alarms are a subset of events associated with a state.
+- While an event will tell you that something happened, an alarm will indicate that something is ongoing.
+- An alarm is raised when the issue you are monitoring manifests itself.
+- The alarm is said to remain active until the issue is resolved
+- Alarms can also be associated with a severity. Severities include cleared, indeterminate, critical, major, minor, and warning.
+- Alarms can originate from the affected node or in the OAM node itself. They can be based on thresholds or state changes, or a mixture of the two.
+- In threshold-based alarms, metrics are monitored and the alarm is raised if a limit is exceeded in one of the metrics.
+
+### Preemptive Support
+
+- Support automation is the building of a knowledge base that is used to reduce service disruption by reacting to external stimuli and resolving problems before they escalate.
+- downtime is something you need to plan for when designing your system.
+- Automation is achieved through the collection and analysis of metrics, events, alarms, and configuration data.
+- preemptively trying to resolve the problem before it occurs.
+
+Keep in mind
+1. Proactive support automation is focused on reducing downtime using ent to end health checks and diagnostic procedures
+2. Preemptive support automation gathers data as metrics, events, alarms and logs and use the results to predict service disruptions before they occur
+3. Self support automation describes the tools and libraries that can be used to troubleshoot solutions and to diagnose and resolve problems
+
+ Conclusion:
+
+1. Split up your system’s functionality into manageable, standalone nodes.
+2. Choose a distributed architectural pattern.
+3. Choose the network protocols your nodes, node families, and clusters will use when
+communicating with each other.
+4. Define your node interfaces, state, and data model.
+5. For every interface function in your nodes, pick a retry strategy.
+6. For all your data and state, pick your sharing strategy across node families, clusters,
+and types, taking into consideration the needs of your retry strategy.
+7. Design your system blueprint, looking at node ratios for scaling up and down.
+8. Identify where to apply backpressure and load regulation.
+9. Define your OAM approach, defining system and business alarms, logs, and metrics.
+10. Identify where to apply support automation.
+
+
+
+
 Advicing Wombat
+
+- Docker network
+- Wombat phylosopy: blog post
+- Wombat installation
+- Adding a simple node in wombat
+    - Add node
+    - Topology
+    - Metrics
+    - Logs
+    - Alarms
+    - Tools
+- Add node with mnesia
+    - Metrics
+

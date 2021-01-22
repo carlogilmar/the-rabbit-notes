@@ -16,3 +16,4 @@ Complementarios
 Side Projects
 
 - Meter Blog en Visual Partnership
+- Conferencias LATAM Erlang Elixir

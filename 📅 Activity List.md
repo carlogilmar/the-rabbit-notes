@@ -50,9 +50,9 @@ Miércoles
 
 
 Lunes 12pm - 2 am
-Martes 9 am
-Miercoles
-Jueves
+Martes 9 am - 11:30pm
+Miercoles 8 am - 12 pm
+Jueves 8 am
 Viernes
 
 
