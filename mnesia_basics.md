@@ -32,3 +32,6 @@ Example Mnesia
 3. Start Mnesia
 4. Run the module function for create the tables given by the company.hrl file
 5. Run mnesia:info(). for see the database status
+
+---
+
