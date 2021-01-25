@@ -188,3 +188,55 @@ Asumme:
 - As soon as you increase the number of replicas in tghe nodes you will have more risk of partitioned network
 - It's important have a recovery plan from partitioned databases 
 
+### Mnesia Metrics
+
+- Mnesia Info `mnesia:system_info(all).`
+
+> https://erlang.org/doc/man/mnesia.html#system_info-1
+
+Options as atoms:
+- all
+- access_module
+- auto_repair
+- backup_module
+- checkpoints
+- event_module
+- db_nodes
+- debug
+- directory
+- dump_log_load_regulation
+- dump_log_update_in_place
+- dump_log_write_threshold
+- extra_db_nodes
+- fallback_activated
+- held_locks
+- is_running
+- local_tables
+- lock_queue
+- log_version
+- master_node_tables
+- protocol_version
+- running_db_nodes
+- schema_location
+- subscribers
+- tables
+- transactions
+- transaction_failures
+- transaction_commits
+- transaction_restarts
+- transaction_log_writes
+- use_dir
+- version
+
+### Mnesia System information
+
+> http://erlang.org/documentation/doc-5.0.1/lib/mnesia-3.9.2/doc/html/Mnesia_chap7.html
+
+Retrieve system information:
+- `mnesia:table_info`
+- `mnesia:system_info`
+
+- If Mnesia malfunctions, system information is dumped to a file named  `MMnesiaCore.Node.When.`
+- If a Mnesia system behaves strangely, it is recommended that a Mnesia core dump file be included in the bug report. `mnesia_lib:coredump().`
+
+- The table content is placed in a .DAT file on the disc. When the Mnesia system is started, the RAM table will initially be loaded with data from its .DAT file.
