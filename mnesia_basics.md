@@ -240,3 +240,31 @@ Retrieve system information:
 - If a Mnesia system behaves strangely, it is recommended that a Mnesia core dump file be included in the bug report. `mnesia_lib:coredump().`
 
 - The table content is placed in a .DAT file on the disc. When the Mnesia system is started, the RAM table will initially be loaded with data from its .DAT file.
+
+# Restore Database
+
+- Create schema `mnesia:create_schema([node()]).`
+- Start Mnesia `mnesia:start().`
+- Create record `rd(user, {username, code})`
+- Create table stored in disc not in ram `mnesia:create_table(user, [{disc_copies, [node()]}]).` 
+- Add some records and delete 
+
+```
+[ mnesia:transaction(fun() -> mnesia:write({user, list_to_atom(io_lib:format("user~B", [Idx])), Idx}) end) || Idx <- lists:seq(1, 10)].
+```
+
+```
+mnesia:dirty_delete(user, user1).
+mnesia:dirty_delete(user, user5).
+mnesia:dirty_delete(user, user10).
+```
+
+- Make the backup `mnesia:backup("backup.bup").`
+- Add more records
+```
+[ mnesia:transaction(fun() -> mnesia:write({user, list_to_atom(io_lib:format("user~B", [Idx])), Idx}) end) || Idx <- lists:seq(1, 100)].
+```
+- Restone table
+```
+mnesia:restore("backup.bup", [{default_op, clear_tables}]).
+```
