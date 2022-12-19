@@ -50,9 +50,15 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
 22. What it's interesting about discusting values as part of a group is to see where they interesect, overlap or have gaps.
 23. Conducting a values exercises in your team gives way to tools that are applicable in so many contexts: feedback, managing conflict, 1:1, prioritization.
 
-## Ideas and projects
+## Ideas and projects 💡
 
-- Create your CAREER EVOLUTION JOURNEY
+| Idea or project |
+|-----------------|
+| Create your CAREER EVOLUTION JOURNEY |
+| Familiarize and connect with the Team Values and the Company Values. |
+|                 |
+
+## Create your CAREER EVOLUTION JOURNEY
   - Share your own values 
   - Describe your profesional experiences: project, tooling, achievements, fears, acknoledgements, and opportunities.
   - List your team achievements. (Think on individual way and as a part of your team, how both could evolve?)
@@ -60,5 +66,3 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
   - List your complementary activities.
   - Sketch how your profile is evolving during the time.
   - Use this tool for you own and for share with your team/manager.
-
-- Familiarize and connect with the Team Values and the Company Values. 
