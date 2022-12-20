@@ -50,15 +50,33 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
 22. What it's interesting about discusting values as part of a group is to see where they interesect, overlap or have gaps.
 23. Conducting a values exercises in your team gives way to tools that are applicable in so many contexts: feedback, managing conflict, 1:1, prioritization.
 
+# Chapter 3 Trust and vulnerability
+
+1. Trust takes time. Trust is the thing you will want most to buld with a team.
+2. My job as manager it's to enable the people around me to do their best work together.
+  - Enable: supporting, growing, and nuturing the development of other people.
+  - The people around me: A good manager looks at the wider ecosystem.
+  - To do their best work: Os a synthesis of what they can and like to do and what the company needs.
+  - Together: Team dynamics.
+
+3. Healthy environment:
+  - Hearing each other out: you need healthy debates to come up with the best plan and outcome.
+  - Finding the human in the mistakes: people can show humility about the mistake and learn.
+  - Creativity: Trust and happiness support and develop creativity.
+  - Making our jobs more enjoyable: We can be ourselfes, make jokes and be within a trusted group can help us feel included.
+
+4. It's hard to model vulnerability.
+5. You as leader have to go first.
+6. The team needs to know you're human.
+
 ## Ideas and projects 💡
 
 | Idea or project |
 |-----------------|
-| Create your CAREER EVOLUTION JOURNEY |
+| Create your career evolution journey |
 | Familiarize and connect with the Team Values and the Company Values. |
-|                 |
 
-## Create your CAREER EVOLUTION JOURNEY
+## Create your career evolution journey
   - Share your own values 
   - Describe your profesional experiences: project, tooling, achievements, fears, acknoledgements, and opportunities.
   - List your team achievements. (Think on individual way and as a part of your team, how both could evolve?)
