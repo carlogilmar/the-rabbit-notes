@@ -34,3 +34,12 @@
 - Problems of program modificayion arise from acting on the assumption that programming consist of a program text production instead of recognizing programming as an activity of theory building.
 - On the basis of the Theory Building View the decay of a program text as a result of modifications made by programmers without a proper grasp of the underlying theory becomes understandable.
 - For a program to retain it's quality it's mandatory that each modification is firmly grounded in the theory of it.
+
+## Program Life, Death and Revival
+
+- The building of the program is the same as the building of the theory of it buy and in the team of programmers.
+- During the program life a programmer team possessing it's theory remains in active control of the program, and in particular retains control over all modifications.
+- The death of a program happens when the programmer team possessing it's theory is dissolved.
+- A dead program may continue to be used for execution in a computer and to produce useful results. 
+- The actual state of death becomes visible when demads for modifications of the program cannot be intelligently answered.
+- Revival of a program is the rebuilding of it's theory by a new programmer team.
