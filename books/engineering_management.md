@@ -68,6 +68,12 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
 4. It's hard to model vulnerability.
 5. You as leader have to go first.
 6. The team needs to know you're human.
+7. Your teem needs to see one another with a regular cadence.
+  - Brief standup twice weekly can be productive.
+  - Let people chat.
+  - Make jokes.
+  - Psychologial safety spaces.
+   
 
 ## Ideas and projects 💡
 
@@ -75,6 +81,9 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
 |-----------------|
 | Create your career evolution journey |
 | Familiarize and connect with the Team Values and the Company Values. |
+| Individual Hacks for building trust |
+| Team Trust Termometer  |
+| Dynamics for team trust building |
 
 ## Create your career evolution journey
   - Share your own values 
@@ -84,3 +93,29 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
   - List your complementary activities.
   - Sketch how your profile is evolving during the time.
   - Use this tool for you own and for share with your team/manager.
+
+## Hacks for building trust with your team
+
+- Ask questions to your team mates about their current state, about their everyday job, the things they think are going well, goals, values, etc.
+- What are their values?
+- What good qualities they bring to the table
+- Ask for feedback.
+- Notice their interactions with their peers. 
+
+## Team trust themometer
+
+Positives
+
+- They feel comfortable raising issues directly with each other.
+- They share personal details with each other, and admit when they are having a bad day.
+- They can debate with one another to find good outcomes.
+- They are flexible with one another's needs.
+- They are flexible with one another's needs.
+
+Negatives
+
+- They arise issues with you about one another rather than each other.
+- They are closed off and don't know much about each other.
+- They don't feel comfortable admitting when they're having a rough time.
+- When an issue is raised, they quickly close it
+- They think mainly of their own need without checking in with the group.
