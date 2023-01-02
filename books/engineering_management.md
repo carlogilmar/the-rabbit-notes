@@ -84,6 +84,13 @@ Accountability, advocacy, autonomy, compassion, collaboration, contribution, cre
 | Individual Hacks for building trust |
 | Team Trust Termometer  |
 | Dynamics for team trust building |
+| Define how is your FLOW STATE|
+| Guidelines to empower Mob Programming|
+| Unravel Negative Personal Bias |
+| Describe why your work is meaningful |
+| Future goals for your career |
+| Define a career ladder for you |
+| 1:1 Guideline to take advantage of this space |
 
 ## Create your career evolution journey
   - Share your own values 
@@ -119,3 +126,23 @@ Negatives
 - They don't feel comfortable admitting when they're having a rough time.
 - When an issue is raised, they quickly close it
 - They think mainly of their own need without checking in with the group.
+
+## Career Ladder 
+
+More info:[https://career-ladders.dev/](https://career-ladders.dev/)
+
+- Step 1: where you want to be in 5 years?
+- Step 2: Career laddering review
+- Step 3: Short term goals 30/60/90
+
+## 1:1
+
+- Should reduce uncertainty by making oth parties feel more connected.
+- Should be conudcted in a space with the smallest distractions possible.
+- It's a great opportunity to provide guidance, clarity and reduce uncertainty
+- Prioritize, make actions items, and clarify vision.
+- Belonging is a core tenet from the Maslow hiearchy of needs.
+- 1:1 are more for employees than managers.
+- It's a space for speak about concerns and perform.
+
+
