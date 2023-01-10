@@ -1,4 +1,4 @@
-Emacs DOOM
+# Emacs DOOM
 
 ### Configuration
 
