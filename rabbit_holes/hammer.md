@@ -44,7 +44,7 @@ end
 
 2. Implementation in plug
 
-```
+```elixir
 # Allow ten uploads per 60 seconds
 plug Hammer.Plug, [
   rate_limit: {"video:upload", 60_000, 10},
