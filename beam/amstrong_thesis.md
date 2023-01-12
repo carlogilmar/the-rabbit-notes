@@ -13,6 +13,7 @@
 - 1989 — The ACS/Dunder project began to produce results. 
 
 **Ericsson MD110**
+
 ![image](https://user-images.githubusercontent.com/17634377/211988182-e155491c-5e89-4134-8681-a528e285e9a6.png)
 
 - Erlang Versions
@@ -36,3 +37,4 @@
 - In 1998 I led Ericsson and I found a new company Bluetail AB—in all 15 people led Ericsson. The idea was to use the Erlang technology to program products which make Internet services more reliable.
 - 2001 — The Erlang/OTP technology is well established
   
+
