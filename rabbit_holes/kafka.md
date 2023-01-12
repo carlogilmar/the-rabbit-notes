@@ -9,7 +9,6 @@
 > as well as retrospectively; and routing the event streams to different destination 
 > technologies as needed. 
 
-
 ## Kafka
 
 Kafka combines three key capabilities so you can implement your use cases for event streaming end-to-end with a single battle-tested solution:
@@ -37,5 +36,16 @@ Concepts:
 5. For run inside the container `docker exec -it kafka1 /bin/bash`.
 6. Stop the container: ` docker-compose -f zk-single-kafka-single.yml stop`
 
+## More theory
+
+![image](https://user-images.githubusercontent.com/17634377/212158175-24275b59-ddc1-4b6e-8c68-75cb41340c59.png)
+
+Integrations comes with difficulties around:
+
+- Protocol – how the data is transported (TCP, HTTP, REST, FTP, JDBC…)
+- Data format – how the data is parsed (Binary, CSV, JSON, Avro…)
+- Data schema & evolution – how the data is shaped and may change
+
+![image](https://user-images.githubusercontent.com/17634377/212158221-fabab02d-0190-44b7-9ad7-a9c984397091.png)
 
 
