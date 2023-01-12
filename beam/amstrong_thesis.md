@@ -1,8 +1,10 @@
-## Making reliable distributed systems in the presence of software errors
+# Making reliable distributed systems in the presence of software errors
 
 *Joe Armstrong Thesis, 2003.*
 
 **How can we program systems which behave in a reasonable manner in the presence of software errors?**
+
+## Chapter 1: Introduction to Erlang Development
 
 - Erlang belongs to the family of pure message passing languages—it is a concurrent process-based language having strong isolation between concurrent processes. 
 - The work reported here was performed in the period 1981-2003. During this time the Erlang programming language and OTP was developed by the author and his colleagues.
@@ -38,3 +40,38 @@
 - 2001 — The Erlang/OTP technology is well established
   
 
+## Chapter 2: The Architecture Model
+
+> An architecture is the set of significant decisions about the organization of a software system, the selection of the structural elements and their interfaces by which the system is composed and the architectural style that guides this organization—these elements and their interfaces, their collaborations, and their composition.
+
+An architecture is “a way of thinking about the world.”:
+1. Problem domain
+2. Philosophy
+3. Construction guidelines
+4. Set of pre-defined components
+5. A way of describing things
+6. A way of configure things
+
+### Problem Domain
+- Our system was originally designed for building telecoms switching systems. 
+- Dacker gave ten requirements for the properties of a telecoms system:
+  1. The system must be able to handle very large numbers of concurrent activities.
+  2. Actions must be performed at a certain point in time or within a certain time.
+  3. Systems may be distributed over several computers.
+  4. The system is used to control hardware.
+  5. The software systems are very large.
+  6. The system exhibits complex functionality such as, feature interaction.
+  7. The systems should be in continuous operation for many years.
+  8. Software maintenance (reconfiguration, etc) should be performed without stopping the system.
+  9. There are stringent quality, and reliability requirements.
+  10. Fault tolerance both to hardware failures, and sodware errors, must be provided.
+- This requirements are rewritted as:
+  - **Concurrency:** switching systems are inherently concurrent since in a typical switch many tens of thousands of people may simultaneously interact with the switch. 
+  - **Soft real-time**: — in a telecommunications system many operations have to be performed within a specific time. 
+  - **Distributed:** our system should structured in such a way that it is easy to go from a single-node system to a multi-node distributed system.
+  - **Hardware interaction** — Switching systems have large amounts of peripheral hardware which must be controlled and monitored.
+  - **Large software systems** — switching systems are large, for example, the Ericsson AXE10, and the AT&T 5ESS switch, have several million lines of program code
+  - **Complex functionality** — switching systems have complex functionality.
+  - **Continuous operation** — telecommunications systems are designed for many years of continuous operation.
+  - **Quality requirements** — switching systems should run with an acceptable level of service even in the presence of errors.
+  - **Fault tolerance** — we must design a software and hardware infrastructure that can deal with these faults
