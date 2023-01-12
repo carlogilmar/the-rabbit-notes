@@ -10,3 +10,4 @@
 - [Mox Testing](mox.md)
 - [Rabbit MQ](rabbitmq.md)
 - [Wombat](wombat.md)
+- [Kafka](kafka.md)
