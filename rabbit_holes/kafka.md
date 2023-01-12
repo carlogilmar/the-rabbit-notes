@@ -69,3 +69,15 @@ Integrations comes with difficulties around:
 - By default consumers only consume data that was produced after the consumer first connected to the topic.
 - Kafka consumers are deployed outside kafka. 
 
+**Kafka Streams**
+
+- We may want to process data stored using stream processing applications. 
+- Stream processing applications make use of streaming data stores like Apache Kafka to provide real-time analytics.
+
+## Example
+
+A Producer is storing data in Kafka topic `twitter_tweets`.
+
+![image](https://user-images.githubusercontent.com/17634377/212181332-927a6528-d63a-4b2f-9c10-bc6927281218.png)
+
+![image](https://user-images.githubusercontent.com/17634377/212181592-1cddc09b-fa2d-41e8-943e-7bd43d676cde.png)
