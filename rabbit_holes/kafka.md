@@ -49,3 +49,23 @@ Integrations comes with difficulties around:
 ![image](https://user-images.githubusercontent.com/17634377/212158221-fabab02d-0190-44b7-9ad7-a9c984397091.png)
 
 
+**Kafka Topic:**
+
+- Organize related events.
+- Are not queryable
+- The data stored in key-value form in binary format.
+
+**Kafka Producer:**
+
+- Applications that send data into a topic.
+- Applications normally integrate with Kafka client libraries.
+- Kafka producers are deployed outside kafka and only interact sendind data directly into topics.
+
+**Kafka Consumer**
+
+- We can have applications that make use of the data stream.
+- Applications pull event data from one or more kafka topics.
+- There are many ways to consume events from Kafka.
+- By default consumers only consume data that was produced after the consumer first connected to the topic.
+- Kafka consumers are deployed outside kafka. 
+
