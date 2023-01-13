@@ -107,3 +107,11 @@ Notes about this:
     - Our language based processes are lighter-weight than conventional OS processes. 
     - Creating processes is a highly efficient operation. (much faster than process creation in SO and than thread creation)
     - The Erlang system use of very few operating system services.
+
+- Our applications are structured using parallel processes:
+  - It provides an architectural infrastructure.
+  - By enumerating all the processes in our system we can partition the system into a number of well-defined subcomponents which can be independently implemented and tested.
+  - A system which is designed to be implemented as independent concurrent processes can be implemented on a multiprocessor or run on a distributed network.
+  - Concurrent processes with no data sharing provide a strong measure of fault isolation.
+ 
+### Concurrency Oriented Programming
