@@ -100,4 +100,10 @@ Notes about this:
   - Errors in one application (built by processes) shouldn't have a negative influence on other applications running in the system.
   - To extend to which processes can interfere with each other depends upon the design characteristics of the operating system.
   - Advantages over operating system processes built in our system processes
-    -  Concurrent programs run identi
+    - Concurrent programs run identically on different OS. 
+    - We're not limited by how processes are implemented on any particular operating system. 
+    - Question? How the SO. and the BEAM is managing the processes into SO processes?
+    - The different betweer SO processes and processors are the CPU speeds and memory sizes. 
+    - Our language based processes are lighter-weight than conventional OS processes. 
+    - Creating processes is a highly efficient operation. (much faster than process creation in SO and than thread creation)
+    - The Erlang system use of very few operating system services.
