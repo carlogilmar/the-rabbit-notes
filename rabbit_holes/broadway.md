@@ -38,6 +38,12 @@ How to implement:
   * `handle_message/3`: Here you can do any kind of processing with the incoming message.
 
 
+1. Add the broadway dep: `{:broadway, "~> 1.0"}`.
+2. Create the broadway module with the configuration to start.
+3. Add the broadway module in your supervisor.
+4. Create the producer module.
+5. Create the transformer module.
+6. Add the functions to handle the producer info.
 
 <details>
   <summary>Producer</summary>
@@ -99,11 +105,11 @@ defmodule MyApp do
   def start_link(_opts) do
     Broadway.start_link(__MODULE__,
       name: MyAppExample,
-      producers: [
+      producer: [
         default: [
           module: {MyApp.Counter, 0},
           transformer: {MyApp.CounterMessage, :transform, []},
-          stages: 1
+          concurrency: 1 // rename stages to concurrency
         ]
       ],
       processors: [
