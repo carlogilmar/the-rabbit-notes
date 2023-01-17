@@ -12,6 +12,7 @@
 
 # Erlang
 - [Joe Armstrong's Thesis 2003](https://erlang.org/download/armstrong_thesis_2003.pdf)
+- [Distributed Systems Theory](https://osm.hpi.de/depend/2014/dist_theory.pdf)
 
 # Books to read
 - [Software engineering at Google BOOK](https://abseil.io/resources/swe-book/html/toc.html)
