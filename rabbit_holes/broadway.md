@@ -144,3 +144,42 @@ end
 }
 ```
 </details>
+
+
+### Gen Stage
+
+**Problems to deal when scaling systems:**
+
+- Problem to deal: finite memory and CPU power available. 
+- Server may become overwhelmed.
+- We can hit a limit on a resource available to us.
+- Make the best use of resources should be apriotiry when designing and scaling software.
+
+Using the GenStage library we are going to build a data-processing pipeline.
+ 
+> When we talk about using back-pressure, we actually mean using a mechanism to control or handle back- pressure in a beneficial way.
+
+### The library
+
+> GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
+
+- The GenStage behaviour is used to build stages. 
+- Stages are also Elixir processes and they’re our building blocks for creating data-processing pipelines
+- They can receive events and use them to do some useful work
+- They can also send events to the next stage in the pipeline.
+- A stage can also have multiple instances of itself 
+- Since stages are processes, this effectively means running more than one process of the same stage type.
+- Their most important feature is back-pressure.
+
+![image](https://user-images.githubusercontent.com/17634377/213021169-e86b6de0-305f-40ef-9053-08c2450bb183.png)
+
+![image](https://user-images.githubusercontent.com/17634377/213021291-9d0950f5-3906-4cc1-afb2-146b492aaadf.png)
+
+There are three different types of stages:
+1. producer
+2. consumer
+3. producer-consumer
+
+**Producer:**
+
+- It's the source of data that flows into the pipeline
