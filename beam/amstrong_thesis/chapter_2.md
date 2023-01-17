@@ -74,13 +74,13 @@ Notes about this:
 
 ### Concurrency Oriented Programming COP
 
-- Content structure of the program should follow the concurrent structure of the application. 
-- COP provides the two major advantages associated with Object-oriented programming: polymorphism and the use of protocols having the same message passing interface. 
+- Content structure of the program should follow the concurrent structure of the application.
+- COP provides the two major advantages associated with Object-oriented programming: polymorphism and the use of protocols having the same message passing interface.
 - We can partition a problem into a number of concurrent processes, all process respond to the same messages (they are polymorphic) and they all follow the same message passing interface.
 - `Concurrency` is used to refers to sets of events which happen simultaneously.
 - Real world is concurrent. Sequential activities are a ratity.
 - Programming a sequential chain of activities is viewed the norm, whereas programming collections of concurrent activities is avoided as much as possible.
-- There are poor support provided for concurrency in virtually all conventional programming languages. 
+- There are poor support provided for concurrency in virtually all conventional programming languages.
 - Concurrency is provided by the programming language and not by the operating system.
 
 ### Programming by observing the real world
@@ -93,7 +93,7 @@ Analysis:
 
 Notes:
 - The structure of the program should exactly follow the structure of the problem.
-- Each concurrent activity should be mapped onto one concurrent process. 
+- Each concurrent activity should be mapped onto one concurrent process.
 - 1:1 mapping minimizes the conceptual gap between the problem and the solution.
 - non-COP languages are difficult because they don't have this mapping.
 
@@ -102,7 +102,7 @@ Notes:
 1. Must support processes. `A process can be thought af as a self-contained virtual machine`.
 2. Many processes operating on the same machine must be strongly isolated. A fault in one process hsould not adversely aeffect another process.
 3. Each process must be identified by a unique unforgeable identifier.
-4. There shoulb be no shared state between processes. Processes interact by sending messages. 
+4. There shoulb be no shared state between processes. Processes interact by sending messages.
 5. Message passing is assumed to be unreliable with no guarantee of delivery.
 6. It should be possible for one process to detect failure in another process. We should also know the reason for failure.
 
@@ -122,3 +122,66 @@ Consequences of process isolation:
 2. Message passing is the only way to pass data between processes. Nothing is shared.
 3. Isolation implies that message passing is asynchronous. (To avoid block any flow)
 4. Everything necessary to perform a distributed computation must be copied.
+
+**Names of processes:**
+- We requiere names of processes are unforgeable.
+- Processes know their own names.
+- Parent process knows the names of it's children.
+- If we know the name of a process, we can send a message to that process.
+- If we cannot know the name of a process we cannot interact with it.
+
+**Message Passing:**
+- It's assumed to be atomic, when a message is delivered in it's entirety or not at all.
+- Message passing between a pair of process is to be ordered meaning that if a sequence of messages is sent and received, in the same order they were sent.
+- Messages should not contain pointers to data structures contained within processes.
+- We can send the message and pray that it arrives.
+- Confirmation that a messages has arrived can be achieved by returning a confirmation message.
+- Message Passing is also used for synchronisation.  `Casual Ordering`
+
+### Protocols
+
+- We need isolation of components, message passing and communication protocols.
+
+### System Requirements for Concurrency Oriented Programming
+
+1. System must support concurrency.
+2. Error encapsulation
+3. Fault detection.
+4. Fault identification.
+5. Code Upgrade.
+6. Stable storage.
+
+### Language Requirements
+
+1. Encapsulation primitives: mechanisms for limiting the consequences of an error.
+2. Concurrency: must support a lightweight mechanism to create parallel process and send messages between the processes.
+3. Fault detection primitives: alow one process to observe another process.
+4. Location transparency: if we know the PID of a process, then we should be able to send a message to the process.
+5. Dynamic code upgrade: it should be possible to dynamically change code in a running system. We need a mechanism to allow existing processes to run old code and for new processes to run the modified code at the same time.
+
+### Library Requirements
+
+The essential set of libraries routines must provide:
+
+- Stable stoage which survives a crash.
+- Device drivers: communication with the outside world.
+- Code upgrade: upgrade code in a sunning system.
+- Infrastructure: starting and stopping the system...
+- The library routines are conventionally provided by an operating system.
+- The remaining OS only provides a primitive set of device drivers.
+
+## Application libraries
+
+- Complex applications need much higher-level abstractions than storage.
+- We need pre-packaged software entities to help us program.
+
+> OTP libraries provide us with a complete set of design patterns (behaviours) for building fault-tolerant applications
+
+**OTP Behaviours:**
+
+1. Supervisor
+2. Gen Server
+3. Gen Event
+4. Gen_fsm Finite State machine
+
+
