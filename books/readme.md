@@ -14,6 +14,9 @@
 - [Joe Armstrong's Thesis 2003](https://erlang.org/download/armstrong_thesis_2003.pdf)
 - [Distributed Systems Theory](https://osm.hpi.de/depend/2014/dist_theory.pdf)
 
+# Distribution
+- [Why Do Computers Stop and What Can Be Done About It?](https://www.hpl.hp.com/techreports/tandem/TR-85.7.pdf)
+
 # Books to read
 - [Software engineering at Google BOOK](https://abseil.io/resources/swe-book/html/toc.html)
 - [Cloud Native Patterns BOOK](https://www.manning.com/books/cloud-native-patterns)
