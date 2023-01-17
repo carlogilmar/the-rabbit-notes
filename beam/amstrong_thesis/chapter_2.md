@@ -72,4 +72,53 @@ Notes about this:
   - A system which is designed to be implemented as independent concurrent processes can be implemented on a multiprocessor or run on a distributed network.
   - Concurrent processes with no data sharing provide a strong measure of fault isolation.
 
-### Concurrency Oriented Programming
+### Concurrency Oriented Programming COP
+
+- Content structure of the program should follow the concurrent structure of the application. 
+- COP provides the two major advantages associated with Object-oriented programming: polymorphism and the use of protocols having the same message passing interface. 
+- We can partition a problem into a number of concurrent processes, all process respond to the same messages (they are polymorphic) and they all follow the same message passing interface.
+- `Concurrency` is used to refers to sets of events which happen simultaneously.
+- Real world is concurrent. Sequential activities are a ratity.
+- Programming a sequential chain of activities is viewed the norm, whereas programming collections of concurrent activities is avoided as much as possible.
+- There are poor support provided for concurrency in virtually all conventional programming languages. 
+- Concurrency is provided by the programming language and not by the operating system.
+
+### Programming by observing the real world
+
+Analysis:
+
+1. We identify all the concurrent activities in our real world activity.
+2. We identify all message channels between the concurrent activities.
+3. We write down all the messages which can flow on the different message channels.
+
+Notes:
+- The structure of the program should exactly follow the structure of the problem.
+- Each concurrent activity should be mapped onto one concurrent process. 
+- 1:1 mapping minimizes the conceptual gap between the problem and the solution.
+- non-COP languages are difficult because they don't have this mapping.
+
+### Concurrent Oriented Programming Characteristics
+
+1. Must support processes. `A process can be thought af as a self-contained virtual machine`.
+2. Many processes operating on the same machine must be strongly isolated. A fault in one process hsould not adversely aeffect another process.
+3. Each process must be identified by a unique unforgeable identifier.
+4. There shoulb be no shared state between processes. Processes interact by sending messages. 
+5. Message passing is assumed to be unreliable with no guarantee of delivery.
+6. It should be possible for one process to detect failure in another process. We should also know the reason for failure.
+
+More notes:
+- COP must provide true concurrency.
+- Objects represented as processes truly concurrent.
+- Messages are true asynchronous messages.
+
+### Process Isolation
+
+- This term is central to understanding COP and the construction of fault-tolerant software.
+- Two processes operating on the same machine must be as independent.
+
+Consequences of process isolation:
+
+1. Processes have share nothing sematincs. (They run on physically separated machines)
+2. Message passing is the only way to pass data between processes. Nothing is shared.
+3. Isolation implies that message passing is asynchronous. (To avoid block any flow)
+4. Everything necessary to perform a distributed computation must be copied.
