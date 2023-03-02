@@ -11,7 +11,7 @@
 
 ## Example
 
-1. Create the API implementation based on the adapter implementation.
+1. Create the API implementation based on the adapter implementation. Include `@callbacks`, and the `impl()` function for call the API.
 2. Create the module where you're using the API implementation.
 3. In the `test_helper.exs` you can mock the API.
 
