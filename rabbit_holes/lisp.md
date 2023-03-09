@@ -33,6 +33,7 @@ NIL
 - Write your program.
 - Type (`Ctrl` + `C`), (`Ctrl` + `C`) to load the file in the repl.
 - Execute your program from the repl.
+- Type (`Ctrl` + `C`), (`Ctrl` + `Z`) to load the file in the repl and go to the repl.
 
 ![image](https://user-images.githubusercontent.com/17634377/223600095-dfb9c3ac-a0ca-410c-850c-d670a8518547.png)
 
