@@ -34,6 +34,23 @@ Notes from The Programmer's brain by Felienne Hermans
 - **Beacons** are a piece of code contains certain data or approach.
 - **Beacons** are a trigger for programmers to confirm or refute hyphotesis about the source. 😲
 
+# Resumption Strategies for Interrupted Programming Tasks
+
+`Introduction`
+- Interruptions remain problematic.
+- Tasks resumed after an interruption were more difficult to perfirms and took twice as long.
+- 1 hour per day is spent managing interruptions
+- Devs required 15 minutes to recover from an interruption.
+- Programmers have to read, comprehending a program in order to resume work.
+
+`Background`
+- `Mental unit`: idea of maintaining a representation of task context to help to reduce mental workload during development.
+- Risk of interruptions includes the loss of detais and increased time to recover working state.
+- Task execution: 1) planning, 2) execution and 3) evaluation. 
+- The benefit of this representation would be in the ability to reduce interference on recall of nono-relevant code. 
+- Developers need to record prospective tasks that they are unable to complete at the moment.
+- Failure to remember **prospective tasks** is a common occurrence with interrupted tasks. 
+
 References:
 - [Knowledge Organization and Skill Differences in Computer Programmers](https://www.researchgate.net/publication/222462455_Knowledge_Organization_and_Skill_Differences_in_Computer_Programmers)
 - [The information available in brief visual presentations. Psychological Monographs](https://www.researchgate.net/publication/36143888_The_information_available_in_brief_visual_presentations_Psychological_Monographs_General_and_Applied_74_1-29)    
