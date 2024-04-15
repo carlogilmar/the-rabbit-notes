@@ -39,3 +39,8 @@
 
 - [Elixir interview](https://medium.com/@marinakrasnovatr81/few-popular-elixir-and-erlang-interview-questions-you-would-like-to-be-prepared-to-eb5d9aa0f18)
 
+**ML**
+
+- [Coursera Training](https://www.coursera.org/specializations/machine-learning-introduction?#courses)
+
+
