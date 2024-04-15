@@ -1,4 +1,10 @@
-# Frontendmasters
+# Git
+
+## References
+
+- https://shop.jcoglan.com/building-git/
+
+## Frontendmasters
 
 Git Workshop
 	- Commit
