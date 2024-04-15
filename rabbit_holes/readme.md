@@ -11,3 +11,18 @@
 - [Rabbit MQ](rabbitmq.md)
 - [Wombat](wombat.md)
 - [Kafka](kafka.md)
+
+
+## References
+
+**Visual Thinking**
+- [Magic of real time](https://www.griotseye.com/insights/magic-realtime?fbclid=IwAR18itCVCuCMdrqsap1UX2PKRzAYFFBBhpQTIoHf5hhEm9z-CyC-Hj6VdHk)
+- [A practice of presence](https://www.byjuliabakay.com/post/graphic-recording-a-practice-of-presence?fbclid=IwAR2ev27DvkY3lcNX88bT3iqdKPiS3L3ogjTMYd_JG4P9k-xwEhsRnM1Xvvg)
+
+**@visual_partner**
+
+- [Portfolio template](https://themeforest.net/item/info-personal-portfolio-resume-template/48947458)
+
+**Writting Technical posts**
+
+- https://whopaystechnicalwriters.com/
