@@ -4,6 +4,8 @@
 
 # Machine Learning Study Group
 
+[ML Course](https://www.coursera.org/learn/machine-learning/home/week/1)
+
 ## Week 1
 
 > Machine Learning is a field of study that gives computers the ability to learn without being explicitly programmed. Arthur Samuel 1950
