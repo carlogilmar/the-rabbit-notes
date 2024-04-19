@@ -37,3 +37,20 @@
  
 *Classification*
 ![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/7b68f57b-5034-4d68-b8ed-d6b28b386a7f)
+
+**Unsupervised Learning**
+- Given data is not associated with an specific output.
+- Find something interesting in unlabeled data.
+
+![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/a30742b9-6718-42b1-bae2-fc6bfb437176)
+
+- Clustering is one kind of this algorithms
+  - DNA microarray genes vs individuals
+  - Grouping customers
+- Data only comes with inputs X but not output labels
+- Algoriths has to find STRUCTURE in the data:
+  - Clustering: group similar data.
+  - Anomaly detection: Find unusual data points.
+  - Dimensionality reduction: Compress data using fewer numbers.
+
+  
