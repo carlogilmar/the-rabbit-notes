@@ -23,4 +23,12 @@
 *Example of practical use of supervised learning: housing price prediction*
 ![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/87d9a03d-43b7-4ff2-b4cc-496d76e31d86)
 
-
+- SL algorithms learn to predict input.
+- Classification: breast cancer detection.
+- Classification is different than regresion, it predicts categories.
+- Can predict a small finite categories.
+- You need datasets to train your models.
+- Maps input X to output Y.
+- Types of SL: classification and regrestion.
+  - Regression: predict a number, infinitely possible outputs.
+  - Classification: predict categories, small number of possibilities.
