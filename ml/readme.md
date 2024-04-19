@@ -32,3 +32,6 @@
 - Types of SL: classification and regrestion.
   - Regression: predict a number, infinitely possible outputs.
   - Classification: predict categories, small number of possibilities.
+ 
+*Classification*
+![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/7b68f57b-5034-4d68-b8ed-d6b28b386a7f)
