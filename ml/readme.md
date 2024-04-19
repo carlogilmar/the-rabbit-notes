@@ -1,3 +1,7 @@
+<div style="width: 100%;">
+  <img src="image1.svg" style="width: 100%;">
+</div>
+
 # Machine Learning Study Group
 
 ## Week 1
