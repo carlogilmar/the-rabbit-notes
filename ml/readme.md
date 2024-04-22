@@ -6,6 +6,20 @@
 
 [ML Course](https://www.coursera.org/learn/machine-learning/home/week/1)
 
+# Learning History
+
+<details>
+  <summary>Click me</summary>
+
+  **Week 1**
+  - `April 18`: Week 1.
+      - Week 1, Introduction to ML and learning algorithms.   
+      - [Until Jupyter Notebooks](https://www.coursera.org/learn/machine-learning/lecture/lwqzq/jupyter-notebooks)
+  - `April 19`: 
+  
+</details>
+
+
 ## Week 1
 
 > Machine Learning is a field of study that gives computers the ability to learn without being explicitly programmed. Arthur Samuel 1950
