@@ -70,9 +70,9 @@
 ---
 
   **Linear Regression Model**
-  - Predict price of a house is a good example.
   ![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/05e32c6e-0715-44f7-a5dd-e56cb2420d57)
 
+   - Predict price of a house is a good example.
    - Suppose you want to know the proce of a house with 1250 ft.
    - If you have a dataset, then you can create a supervised learning model and train it with "right answers".
    - This is a regression model to predicts numbers.
@@ -84,3 +84,9 @@
    - `Input feature` and `output variable`
    - (x, y) = single training example
 
+**Linear regression with one variable**
+- Training set in supervised models includes: features and targets (X and Y).
+- Your supervised learning algorith produce a function f model (hypothesis).
+- The F hypotesis function is going to process X and produces Y.
+- F: model, X: feature, and Y: prediction (estimated y).
+-  
