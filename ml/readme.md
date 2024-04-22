@@ -67,4 +67,20 @@
   - Anomaly detection: Find unusual data points.
   - Dimensionality reduction: Compress data using fewer numbers.
 
-  
+---
+
+  **Linear Regression Model**
+  - Predict price of a house is a good example.
+  ![image](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/05e32c6e-0715-44f7-a5dd-e56cb2420d57)
+
+   - Suppose you want to know the proce of a house with 1250 ft.
+   - If you have a dataset, then you can create a supervised learning model and train it with "right answers".
+   - This is a regression model to predicts numbers.
+   - Linear regression is a regression model. (Infinity outputs)
+   - Other type of regression model is clasification. (predicts categories, with small number of possible outputs)
+   
+   **Terminology**
+   - Dataset to train a model is `training set`
+   - `Input feature` and `output variable`
+   - (x, y) = single training example
+
