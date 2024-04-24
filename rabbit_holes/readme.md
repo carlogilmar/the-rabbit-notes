@@ -42,5 +42,7 @@
 **ML**
 
 - [Coursera Training](https://www.coursera.org/specializations/machine-learning-introduction?#courses)
+- [Neural Networks with Erlang](https://link.springer.com/book/10.1007/978-1-4614-4463-3)
+- [Genetic Algortihms](https://pragprog.com/titles/smgaelixir/genetic-algorithms-in-elixir/)
 
 
