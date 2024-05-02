@@ -189,3 +189,30 @@ if __name__ == '__main__':
     comp_file = sys.argv[2]
     merge(revs_file, comp_file)
 ```
+
+Running this script:
+
+>  python3 merge.py revisions.csv bifrost_complexity.csv > merge.csv
+
+```
+module,revisions,code
+apps/foundation/mix.exs,372,174
+.github/workflows/ci.yml,325,494
+apps/site_web/lib/site_web/router.ex,308,216
+config/config.exs,260,202
+apps/foundation/priv/cockroach/seeds.exs,212,1542
+apps/foundation/lib/foundation/commerce/checkouts/checkouts.ex,208,289
+apps/foundation/lib/foundation/promotions/promotions.ex,192,281
+config/test.exs,181,142
+apps/foundation/test/foundation/commerce/checkouts/checkouts_test.exs,154,732
+apps/foundation/lib/foundation/commerce/commerce.ex,151,263
+apps/foundation/test/foundation/commerce/commerce_test.exs,150,1162
+apps/foundation/test/foundation/promotions/promotions_test.exs,147,690
+config/runtime.exs,140,160
+apps/foundation/lib/foundation/storefront/storefront.ex,120,74
+apps/site_web/lib/site_web/templates/templates.ex,118,269
+apps/foundation/lib/foundation/commerce/messages/order_message.ex,117,253
+apps/site_web/lib/site_web/controllers/checkout/payment_controller.ex,106,60
+apps/foundation/lib/foundation/commerce/accounts/accounts.ex,103,423
+apps/foundation/lib/foundation/commerce/orders/order.ex,102,195
+```
