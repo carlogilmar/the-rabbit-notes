@@ -49,7 +49,10 @@ Notes from The Programmer's brain by Felienne Hermans
 - Task execution: 1) planning, 2) execution and 3) evaluation. 
 - The benefit of this representation would be in the ability to reduce interference on recall of nono-relevant code. 
 - Developers need to record prospective tasks that they are unable to complete at the moment.
-- Failure to remember **prospective tasks** is a common occurrence with interrupted tasks. 
+- Failure to remember **prospective tasks** is a common occurrence with interrupted tasks.
+
+`Concepts and datasets`
+- 
 
 References:
 - [Knowledge Organization and Skill Differences in Computer Programmers](https://www.researchgate.net/publication/222462455_Knowledge_Organization_and_Skill_Differences_in_Computer_Programmers)
