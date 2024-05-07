@@ -47,4 +47,8 @@
 - [LiveBooks ML Book](https://github.com/nickgnd/programming-machine-learning-livebooks?tab=readme-ov-file)
 - [Programming Machine Learning Book](https://pragprog.com/titles/pplearn/programming-machine-learning/)
 
+**Data viz**
+- [from data to viz](https://www.data-to-viz.com/)
+- [D3 gallery](https://d3-graph-gallery.com/index.html)
+- [100 visualizations](https://100.datavizproject.com/)
 
