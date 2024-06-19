@@ -65,3 +65,8 @@ This is a place to write notes from books, papers and courses as a learning diar
 - [D3 gallery](https://d3-graph-gallery.com/index.html)
 - [100 visualizations](https://100.datavizproject.com/)
 
+**Knowledge management**
+- [architecture docs post](https://surviving-software-architecture.ghost.io/architecture-documentation/#different-types-of-documentation)
+- [IcePanel tool](https://icepanel.io/pricing)
+- [Diataxis model](https://diataxis.fr/?ref=surviving-software-architecture.ghost.io)
+
