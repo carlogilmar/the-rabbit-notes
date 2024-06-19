@@ -69,4 +69,9 @@ This is a place to write notes from books, papers and courses as a learning diar
 - [architecture docs post](https://surviving-software-architecture.ghost.io/architecture-documentation/#different-types-of-documentation)
 - [IcePanel tool](https://icepanel.io/pricing)
 - [Diataxis model](https://diataxis.fr/?ref=surviving-software-architecture.ghost.io)
+- [Communication patterns book](https://www.amazon.es/dp/1098140540)
+- [Pragmatic engineer: what's changed in 50 years](https://newsletter.pragmaticengineer.com/p/mythical-man-month-part-3)
+- [Software architecting](https://blogboard.io/topic/Software%20Architecture)
+- [Martin Fowler Architecting](https://martinfowler.com/architecture/)
+- [Stripe engineering](https://newsletter.pragmaticengineer.com/p/stripe)
 
