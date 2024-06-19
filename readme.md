@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/17634377/208537115-b36228a4-8e7e-4ce0-b6ea-10d8d0355c0f.png)
+![IMG_1378](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/e526c77c-baff-4e65-b195-135e2aff702b)
 
 # The Rabbit Notes 🐇
 
