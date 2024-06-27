@@ -46,6 +46,8 @@ This is a place to write notes from books, papers and courses as a learning diar
 - [The BEAM book](https://blog.stenmans.org/theBeamBook/)
 - [Adopting Erlang](https://adoptingerlang.org/docs/development/setup/)
 - [Happi hacking](https://happihacking.com/blog/)
+- [10 Ways to Stop an Erlang VM](https://medium.com/erlang-battleground/10-ways-to-stop-an-erlang-vm-7016bd593a5)
+- [Zen of Erlang](https://ferd.ca/the-zen-of-erlang.html)
 
 
 **Elixir**
@@ -75,3 +77,5 @@ This is a place to write notes from books, papers and courses as a learning diar
 - [Martin Fowler Architecting](https://martinfowler.com/architecture/)
 - [Stripe engineering](https://newsletter.pragmaticengineer.com/p/stripe)
 
+**Code Reviews**
+- [How to review PR's blog](https://mtlynch.io/human-code-reviews-2/)
