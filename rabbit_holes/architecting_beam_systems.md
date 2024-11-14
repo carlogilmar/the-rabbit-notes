@@ -14,6 +14,4 @@
 - Concurrency (language) + Distribution (erlang) = scalability
 - Immutability: property about don't change the state.
 
-
-
----
+<img width="421" alt="image" src="https://github.com/user-attachments/assets/385ed159-7067-49cb-8aa7-21bb863e6313">
