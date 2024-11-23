@@ -2,7 +2,63 @@
 
 Concepts to know:
 
-- Beat `play 70`
+Sonic Pi Essentials
+
+- `BPM` stands for Beats Per Minute. It’s a unit of measurement for the tempo or speed of a song, indicating how many beats (or rhythmic pulses) occur in one minute.
+- `live_loop` is a key feature of Sonic Pi that allows you to repeat a block of code indefinitely
+- `use_synth :fm`: Use the FM (Frequency Modulation) synthesizer for generating sounds. Synths: `:tb303`, `:prophet`
+- `play_pattern_timed`: This is a function that plays a sequence of notes (a pattern) at a specified time interval.
+- `amp: 1.5`: This controls the volume (amplitude) of the sound.
+- `release: 0.5`: This controls how long the note's sound will continue after you press it.
+- `sync` command: It tells this loop to wait for the `:bassline` loop to finish its current iteration before it starts playing.
+
+`Billie Jean`
+```ruby
+# Set BPM
+use_bpm 118
+
+# Iconic Bassline
+live_loop :bassline do
+  use_synth :fm
+  play_pattern_timed [:g2, :g2, :g2, :g2, :a2, :a2, :a2, :g2],
+    [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
+    amp: 1.5, # volume
+    release: 0.5 # how long will continue
+end
+
+# Chords for Harmony
+live_loop :chords do
+  sync :bassline
+  use_synth :piano
+  play_chord [:g3, :b3, :d4], release: 2
+  sleep 2
+  play_chord [:a3, :c4, :e4], release: 2
+  sleep 2
+end
+
+# Beat
+live_loop :drums do
+  sample :bd_808, amp: 1.5
+  sleep 0.5
+  sample :sn_dub, amp: 1.2
+  sleep 0.5
+  sample :bd_808, amp: 1.5
+  sleep 0.5
+  sample :drum_cymbal_closed, amp: 0.8
+  sleep 0.5
+end
+
+# Melody Hint (optional)
+live_loop :melody do
+  sync :bassline
+  use_synth :pluck
+  
+  # Simplified vocal hint
+  play_pattern_timed [:b4, :c5, :d5, :e5], [0.25, 0.25, 0.5, 1], amp: 1.2
+  sleep 1.5
+end
+```
+
 
 ## Documentation Examples
 
