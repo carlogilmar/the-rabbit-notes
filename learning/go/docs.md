@@ -16,6 +16,7 @@
 - `go install` for install binaries.
 
 Command | Description
+:-----:|:-------:
 go run | Run a Go program
 go build | Compile the program to a binary
 go install | Install binary system-wide
