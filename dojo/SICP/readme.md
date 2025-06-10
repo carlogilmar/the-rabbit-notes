@@ -61,3 +61,14 @@
 - **Recursive thinking** helps describe process structure
 - Python supports **functional style** even without being purely functional
 - Your Elixir background gives you a huge advantage in understanding and applying these ideas
+
+# BLOOM Let your thinking bloom.
+
+```
+1. Explain the problem in terms of input/output
+2. Decompose the logic
+3. Visualize using the logic
+4. Read/Write the code
+5. Run the code mentally to understand how it works.
+6. Get conclusions.
+```
