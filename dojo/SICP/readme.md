@@ -8,6 +8,14 @@
   - Higher-Order Functions
   - Functional Abstraction & Reuse
 
+2. Building abstractions with data
+  - Introduction to data abstraction
+  - Hierarchical data and the closure property
+  - Symbolic data
+  - Multiple representations for abstract data
+  - systems with generic operations
+
+
 ## 📘 Chapter 1 Summary — *Building Abstractions with Procedures* (SICP in Python)
 
 > This chapter explores how to build expressive, composable programs by treating procedures (functions) as abstractions. These ideas are deeply familiar to Elixir developers and map cleanly into Python with a functional mindset.
