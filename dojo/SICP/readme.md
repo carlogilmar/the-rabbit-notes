@@ -80,3 +80,20 @@
 5. Run the code mentally to understand how it works.
 6. Get conclusions.
 ```
+
+## 🌿 SICP 2.1 — Introduction to Data Abstraction (Summary)
+
+**Main idea:**
+Separate *what* data means from *how* it is implemented.
+
+### ✅ Key Concepts
+
+- **Constructor**: builds a data object from inputs
+  _e.g._ `make_rational(n, d) → (n, d)`
+
+- **Selectors**: extract data from an object
+  _e.g._ `numerator(r), denominator(r)`
+
+- **Data Abstraction Barrier**:
+  Users of a data object **only interact with it via interface**, never the internal structure.
+  This makes refactoring or changing implementations easy.
