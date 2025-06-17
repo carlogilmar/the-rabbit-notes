@@ -1,19 +1,18 @@
 # Structure and interpretation of computer problems in python
 
-1. Building abstractions with procedures
+- 1. Building abstractions with procedures
  - Expressions & Simple Procedures
  - Naming & Substitution Model
  - Conditional Expressions
  - Recursion vs Iteration
  - Higher-Order Functions
  - Functional Abstraction & Reuse
-
-2. Building abstractions with data
- - Introduction to data abstraction
- - Hierarchical data and the closure property
- - Symbolic data
- - Multiple representations for abstract data
- - systems with generic operations
+- 2. Building abstractions with data
+  - Introduction to data abstraction
+  - Hierarchical data and the closure property
+  - Symbolic data
+  - Multiple representations for abstract data
+  - systems with generic operations
 
 ### List of concepts
 
