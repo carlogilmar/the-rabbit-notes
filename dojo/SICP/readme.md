@@ -8,12 +8,28 @@
   - Higher-Order Functions
   - Functional Abstraction & Reuse
 
+```
+⭐️ Concept Summary Chapter 1
+I. Expressions
+II. Procedures
+```
+
 2. Building abstractions with data
   - Introduction to data abstraction
   - Hierarchical data and the closure property
   - Symbolic data
   - Multiple representations for abstract data
   - systems with generic operations
+
+```
+
+⭐️ Concept Summary Chapter 2
+I. Constructors
+II. Selectors
+III. Data abstraction barrier
+IV. Closure Property
+
+```
 
 
 ## 📘 Chapter 1 Summary — *Building Abstractions with Procedures* (SICP in Python)
