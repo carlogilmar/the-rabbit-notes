@@ -29,7 +29,6 @@ IV. Closure Property
 
 ```
 
-
 ## 📘 Chapter 1 Summary — *Building Abstractions with Procedures* (SICP in Python)
 
 > This chapter explores how to build expressive, composable programs by treating procedures (functions) as abstractions. These ideas are deeply familiar to Elixir developers and map cleanly into Python with a functional mindset.
@@ -105,14 +104,11 @@ Separate *what* data means from *how* it is implemented.
 
 - **Constructor**: builds a data object from inputs
   _e.g._ `make_rational(n, d) → (n, d)`
-
 - **Selectors**: extract data from an object
   _e.g._ `numerator(r), denominator(r)`
-
 - **Data Abstraction Barrier**:
   Users of a data object **only interact with it via interface**, never the internal structure.
   This makes refactoring or changing implementations easy.
-
 - **Closure Property**:
   An operation has the **closure property** if it takes values of a certain type and **returns a result of the same type**.
   - You always know what type of result you’ll get.
