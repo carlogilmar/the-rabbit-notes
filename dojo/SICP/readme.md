@@ -76,9 +76,10 @@
 1. Explain the problem in terms of input/output
 2. Decompose the logic
 3. Visualize using the logic
-4. Read/Write the code
+4. Read/Write the code. Instead of paste, type yourself the code exercises.
 5. Run the code mentally to understand how it works.
 6. Get conclusions.
+7. Replicate by yourself
 ```
 
 ## 🌿 SICP 2.1 — Introduction to Data Abstraction (Summary)
@@ -97,3 +98,14 @@ Separate *what* data means from *how* it is implemented.
 - **Data Abstraction Barrier**:
   Users of a data object **only interact with it via interface**, never the internal structure.
   This makes refactoring or changing implementations easy.
+
+- **Closure Property**:
+  An operation has the **closure property** if it takes values of a certain type and **returns a result of the same type**.
+  - You always know what type of result you’ll get.
+  - You can reuse the operation recursively or iteratively.
+  - You can build complex, hierarchical, or scalable structures.
+  - You can write generic, reusable logic that works at any level.
+
+⸻
+
+
