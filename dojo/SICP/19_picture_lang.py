@@ -16,6 +16,37 @@ def sub_vectors(v1, v2):
 def scale_vector(scalar, v):
     return (scalar * x_of(v), scalar * y_of(v))
 
+######################################################## 1st part
+# -- Coordinate system basics ---
+# Creates a point with x=10 and y=8
+point = make_point(10, 8)
+print(f"Point: {point}")  # → (10, 8)
+
+# Extract X coordinate
+x = x_of(point)
+print(f"X: {x}")  # → 10
+
+# Extract Y coordinate
+y = y_of(point)
+print(f"Y: {y}")  # → 8
+
+# Create two points for vector math
+point1 = make_point(10, 8)
+point2 = make_point(1, 2)
+
+# Add the two vectors (element-wise addition)
+add_vector = add_vectors(point1, point2)
+print(f"Add vector: {add_vector}")  # → (11, 10)
+
+# Subtract point2 from point1 (element-wise subtraction)
+sub_vectors = sub_vectors(point1, point2)
+print(f"Sub vectors: {sub_vectors}")  # → (9, 6)
+
+# Scale point1 by a factor of 10 (multiply both x and y by 10)
+scale_vector_1 = scale_vector(10, point1)
+print(f"Scale vector: {scale_vector_1}")  # → (100, 80)
+
+########################################################
 def make_frame(origin, edge1, edge2):
     return {
         "origin": origin,
@@ -40,6 +71,22 @@ def frame_coord_map(frame):
         return add_vectors(origin_of(frame), add_vectors(scaled_edge1, scaled_edge2))
     return mapper
 
+######################################################## 2nd part
+origin = (0, 0)
+edge1 = (1, 0)  # x-direction
+edge2 = (0, 1)  # y-direction
+frame = make_frame(origin, edge1, edge2)
+mapper = frame_coord_map(frame)
+
+print(mapper((0.5, 0.5)))  # Should return (0.5, 0.5)
+
+print(f"Complete Frame: {frame}")
+print(f"Origin: {origin}")
+print(f"Edge1: {edge1}")
+print(f"Edge2: {edge2}")
+
+######################################################## 3rd Part
+
 def segments_painter(segments):
     def painter(frame):
         mapper = frame_coord_map(frame)
@@ -49,6 +96,8 @@ def segments_painter(segments):
             transformed_segments.append((mapper(start), mapper(end)))
         return transformed_segments
     return painter
+
+######################################################## 4th Part
 
 def beside(painter1, painter2):
     def combined(frame):
@@ -84,6 +133,7 @@ def below(painter1, painter2):
         return painter1(bottom) + painter2(top)
     return combined
 
+######################################################## 5th Part
 def right_split(painter, n):
     if n == 0:
         return painter
@@ -91,6 +141,7 @@ def right_split(painter, n):
         smaller = right_split(painter, n - 1)
         return beside(painter, smaller)
 
+######################################################## 6th Part
 def square_of_four(tl, tr, bl, br):
     top = beside(tl, tr)
     bottom = beside(bl, br)
