@@ -7,18 +7,19 @@
   - Recursion vs Iteration
   - Higher-Order Functions
   - Functional Abstraction & Reuse
-```
-⭐️ Concept Summary Chapter 1
-I. Expressions
-II. Procedures
-```
 2. Building abstractions with data
   - Introduction to data abstraction
   - Hierarchical data and the closure property
   - Symbolic data
   - Multiple representations for abstract data
   - systems with generic operations
+
+### List of concepts
+
 ```
+⭐️ Concept Summary Chapter 1
+I. Expressions
+II. Procedures
 
 ⭐️ Concept Summary Chapter 2
 I. Constructors
