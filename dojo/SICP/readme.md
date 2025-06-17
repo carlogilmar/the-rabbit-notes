@@ -7,6 +7,7 @@
  - Recursion vs Iteration
  - Higher-Order Functions
  - Functional Abstraction & Reuse
+
 2. Building abstractions with data
  - Introduction to data abstraction
  - Hierarchical data and the closure property
