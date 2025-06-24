@@ -12,7 +12,33 @@
   - Hierarchical data and the closure property
   - Symbolic data
   - Multiple representations for abstract data
-  - systems with generic operations
+  - Systems with generic operations
+
+# BLOOM Let your thinking bloom.
+
+```
+Code Learning
+1. Explain the problem in terms of input/output
+2. Decompose the logic
+3. Visualize using the logic
+4. Read/Write the code. Instead of paste, type yourself the code exercises.
+5. Run the code mentally to understand how it works.
+6. Get conclusions.
+7. Replicate by yourself
+```
+
+# LLM Context Structure
+
+```
+- Context
+- Define Tools
+- Think step by step
+
+Learning Compass
+1. Summarization Tool: Summarize of topics.
+2. Learning constellation Tool: List of concepts.
+3. Agenda of topics: List of topics to learn.
+```
 
 ### List of concepts
 
@@ -83,17 +109,6 @@ IV. Closure Property
 - Python supports **functional style** even without being purely functional
 - Your Elixir background gives you a huge advantage in understanding and applying these ideas
 
-# BLOOM Let your thinking bloom.
-
-```
-1. Explain the problem in terms of input/output
-2. Decompose the logic
-3. Visualize using the logic
-4. Read/Write the code. Instead of paste, type yourself the code exercises.
-5. Run the code mentally to understand how it works.
-6. Get conclusions.
-7. Replicate by yourself
-```
 
 ## 🌿 SICP 2.1 — Introduction to Data Abstraction (Summary)
 
@@ -116,6 +131,23 @@ Separate *what* data means from *how* it is implemented.
   - You can build complex, hierarchical, or scalable structures.
   - You can write generic, reusable logic that works at any level.
 
-⸻
+## 2.3 Symbolic Data
 
+In this chapter, SICP explores how symbols and symbolic structures can be manipulated just like numbers and data structures. Instead of thinking only in terms of math and vectors, we move into symbols, lists, sets, and trees — foundational for building interpreters, algebra systems, and knowledge representations.
+
+The key idea: symbols are data too. You can store, inspect, combine, and process symbolic expressions with recursive procedures.
+
+Concepts:
+
+- `Quotation (')`: Marks a list or symbol as data, not something to evaluate. 'x is a symbol. '(+ x 1) is a list representing an expression.
+- `Symbols`: Identifiers treated as literal data, not variables. Used for reasoning about expressions.
+- `Tagged Lists`: Lists where the first item is a tag indicating the kind of data (e.g., ['sum', a, b]) — a pattern used for building interpreters.
+- `Symbolic Differentiation`: Using recursion to manipulate algebraic expressions represented as nested lists.
+- `Sets as Lists`: Representing mathematical sets using lists, and building operations like union, intersection, and membership tests.
+- `Ordered Sets`: An optimization: keeping sets sorted so membership and union can be done more efficiently.
+- `Trees`: Lists that contain other lists — enabling hierarchical data like parse trees or file systems.
+Set of Trees
+Representing and querying deeply nested symbolic structures.
+Symbolic Pattern Matching
+Looking at structure rather than just values to decide what to do — a core idea in building compilers and interpreters.
 
