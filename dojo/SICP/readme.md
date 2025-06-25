@@ -151,7 +151,7 @@ Representing and querying deeply nested symbolic structures.
 Symbolic Pattern Matching
 Looking at structure rather than just values to decide what to do — a core idea in building compilers and interpreters.
 
-`Agenda of Topics`
+`Agenda of Topics for 2.3`
 1. Quotation and Symbols: Expressions as data.
 2. Symbolic Algebra: Differentiation
 3. Tagged Data & Pattern Recognition

@@ -22,5 +22,8 @@ def simplify(exp):
         else:
             return [op, left, right]
 
+
+#print(f" Result is: {simplify(['*', 1, 'x'])}")
+#print(f" Result is: {simplify(['/', 2, 'x'])}")
 print(simplify(['+', ['*', 1, 'x'], 2]))
 

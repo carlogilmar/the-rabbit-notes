@@ -15,14 +15,3 @@
 - `go mod tidy` for clean deps.
 - `go install` for install binaries.
 
-Command | Description
-:-----:|:-------:
-go run | Run a Go program
-go build | Compile the program to a binary
-go install | Install binary system-wide
-go test | Run unit tests
-go fmt | Format code
-go doc | Show documentation
-go get | Add dependencies
-go mod tidy | Clean up your go.mod/go.sum
-
