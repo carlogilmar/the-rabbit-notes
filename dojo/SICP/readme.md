@@ -14,32 +14,6 @@
   - Multiple representations for abstract data
   - Systems with generic operations
 
-# BLOOM Let your thinking bloom.
-
-```
-Code Learning
-1. Explain the problem in terms of input/output
-2. Decompose the logic
-3. Visualize using the logic
-4. Read/Write the code. Instead of paste, type yourself the code exercises.
-5. Run the code mentally to understand how it works.
-6. Get conclusions.
-7. Replicate by yourself
-```
-
-# LLM Context Structure
-
-```
-- Context
-- Define Tools
-- Think step by step
-
-Learning Compass
-1. Summarization Tool: Summarize of topics.
-2. Learning constellation Tool: List of concepts.
-3. Agenda of topics: List of topics to learn.
-```
-
 ### List of concepts
 
 ```
@@ -160,3 +134,13 @@ Looking at structure rather than just values to decide what to do — a core ide
 6. Sets Represented as Trees
 7. Symbolic Trees and Nested Structures
 8. Extended Symbolic Manipulation
+
+## 2.4 Sets represented as lists
+
+- ´Set as List´: A set is represented as a list (e.g. [1, 2, 3] for {1, 2, 3})
+- ´Membership´: A function like element_of_set(x, s) returns True if x ∈ s
+- ´Adjoin (Add)´: Add an item if not present´: adjoin_set(x, s)
+- ´Union´: Combine elements from both sets (no duplicates)
+- ´Intersection´: Return only elements found in both sets
+- ´Abstraction Barrier´: User doesn’t care if it’s an unordered list or sorted list — same interface
+
