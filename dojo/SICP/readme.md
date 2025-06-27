@@ -14,7 +14,7 @@
   - Multiple representations for abstract data
   - Systems with generic operations
 
-(Website)[https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-4.html#%_toc_start]
+[Website](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-4.html#%_toc_start)
 
 ### List of concepts
 
