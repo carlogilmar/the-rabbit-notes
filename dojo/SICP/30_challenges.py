@@ -37,6 +37,39 @@ def erase_duplicates(collection):
     else:
         return [collection[0]] + erase_duplicates(collection[1:])
 
+def is_prefix(collection1, collection2):
+    if not collection1:
+        return True
+    if not collection2:
+        return False
+    elif collection1[0] == collection2[0]:
+        return is_prefix(collection1[1:], collection2[1:])
+    else:
+        return False
+
+def deep_reverse(lst):
+    # Base Case 1: If it's not a list, return it
+    if not isinstance(lst, list):
+        return lst
+
+    # Base Case 2: Empty list
+    if lst == []:
+        return []
+
+    # Recursive Case
+    head = lst[0]
+    tail = lst[1:]
+
+    reversed_tail = deep_reverse(tail)  # Reverse the tail
+    reversed_head = deep_reverse(head)  # Reverse the head in case it's a sublist
+
+    return reversed_tail + [reversed_head]
+
+# ✅ Test cases
+print(deep_reverse([1, 2, 3]))            # Output: [3, 2, 1]
+print(deep_reverse([1, [2, 3], 4]))       # Output: [4, [3, 2], 1]
+print(deep_reverse([[1, 2], [3, [4, 5]]])) # Output: [[[5, 4], 3], [2, 1]]
+
 
 print(find_max([1,2,3,6,7,8,9]))
 print(find_max([1,2,3,6,10,7,8,9]))
@@ -53,3 +86,9 @@ print(remove_duplicates([1,1,1,2,2,2,3,4,5,5]))
 print(remove_duplicates([1,2,3,4,5]))
 print(remove_duplicates(['a', 'b', 'c', 'd', 'a', 'b', 'c', 'c']))
 print(erase_duplicates(['a', 'b', 'c', 'd', 'a', 'b', 'c', 'c']))
+
+print("------------ Is prefix --------- ")
+print(f"True: {is_prefix([1,2], [1,2,3,4])}")
+print(f"False: {is_prefix([1,3], [1,2,3,4])}")
+print(f"True: {is_prefix([], [1,2,3,4])}")
+print(f"False: {is_prefix([1,2], [])}")
