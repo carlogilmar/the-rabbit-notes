@@ -25,7 +25,7 @@ Design Insight:
 - Tools like the Inspector, Debugger, Browser, etc., let you explore the running system at any level.
 
 Design Insight:
-`Your system is transparent and explorable — you’re never debugging from the outside, you’re walking inside the world you’ve built.
+`Your system is transparent and explorable — you’re never debugging from the outside, you’re walking inside the world you’ve built.`
 
 ## 4. 🧩 Uniformity and Simplicity
 - Very small syntax (often fewer than 10 core concepts).
