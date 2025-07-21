@@ -1,6 +1,7 @@
 # Learning Pharo 
 
 [MOOC Link to YT Video](https://mooc.pharo.org/)
+[MOOC Lessons](https://mooc.pharo.org/)
 
 ## Download the IDE
 
