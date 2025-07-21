@@ -50,3 +50,13 @@ Alan Kay: `The computer is an instrument whose music is ideas.`
 
 Design Insight:
 `Tooling is not a service outside the language — it’s part of the same living system. This enables moldable tools and domain-specific views.`
+
+## 🔄 The Pharo Take: Moldable and Live Software
+
+Pharo builds on all of the above and adds:
+- 🌐 Live remote systems: You can inspect and modify a Pharo system running on another machine.
+- 🧠 Moldable Development: Build custom tools for understanding your domain, not just for manipulating code.
+- 🖼️ Domain-specific inspectors: Replace boring object views with charts, dashboards, visual trees — whatever fits your problem.
+- 📈 Self-aware systems: Systems that expose their internals to you in a friendly, useful way.
+
+  
