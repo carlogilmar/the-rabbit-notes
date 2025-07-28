@@ -1,6 +1,4 @@
-![IMG_1378](https://github.com/carlogilmar/the-rabbit-notes/assets/17634377/e526c77c-baff-4e65-b195-135e2aff702b)
-
-# The Rabbit Notes 🐇
+# My Digital Garden 🐇
 
 This is a place to write notes from books, papers and courses as a learning diary.
 
