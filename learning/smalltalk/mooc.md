@@ -114,6 +114,27 @@ factorial
 ```
 
 ```pharo
-1 ro:4 do: [:i|Transcript <<i]
+1 to:4 do: [:i|Transcript <<i]
 ```
+
+## Classes
+
+Template
+```
+Object subclass: #Point
+  instanceVariableNames: 'x y'
+  classVariableNames: ''
+  category: ''
+```
+
+Method Definiton
+```
+messageSelectorAndArgumentNames
+	"Comment stating purpose of message"
+	|temporary variable names|
+	statements
+```
+
+
+
 
